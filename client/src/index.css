@@ -3,12 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gray-900 text-white;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -24,31 +20,35 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 h-10 py-2 px-4;
+    @apply btn bg-blue-600 text-white hover:bg-blue-700 h-10 py-2 px-4;
   }
 
   .btn-secondary {
-    @apply btn bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 py-2 px-4;
+    @apply btn bg-gray-600 text-white hover:bg-gray-700 h-10 py-2 px-4;
   }
 
   .btn-ghost {
-    @apply btn hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4;
+    @apply btn hover:bg-gray-700 hover:text-white h-10 py-2 px-4;
   }
 
   .btn-outline {
-    @apply btn border border-input hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4;
+    @apply btn border border-gray-600 hover:bg-gray-700 hover:text-white h-10 py-2 px-4;
   }
 
-  .input {
-    @apply flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 h-10 py-2 px-4;
+  }
+
+  .input-primary {
+    @apply flex h-10 w-full rounded-md border border-gray-600 bg-gray-800 px-3 py-2 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   .card {
-    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+    @apply rounded-lg border border-gray-700 bg-gray-800 text-white shadow-sm;
   }
 
   .card-header {
@@ -57,6 +57,30 @@
 
   .card-content {
     @apply p-6 pt-0;
+  }
+
+  .extension-card {
+    @apply card p-4 hover:bg-gray-700 transition-colors cursor-pointer;
+  }
+
+  .extension-card.installed {
+    @apply border-green-600;
+  }
+
+  .extension-card.featured {
+    @apply border-yellow-500;
+  }
+
+  .file-tree-item {
+    @apply flex items-center justify-between p-2 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer group;
+  }
+
+  .file-tree-item.selected {
+    @apply bg-blue-600;
+  }
+
+  .file-tree-item.directory {
+    @apply font-medium;
   }
 
   .scrollbar-thin {
@@ -84,25 +108,7 @@
 
 /* Dark mode styles */
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 84% 4.9%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
+  color-scheme: dark;
 }
 
 /* Custom animations */
