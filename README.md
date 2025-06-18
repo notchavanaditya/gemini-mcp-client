@@ -276,8 +276,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: support@gemini-mcp-client.dev
-- 💬 Discord: [Join our community](https://discord.gg/gemini-mcp)
+- 📧 Email: adityac9421@gmail.com
 - 🐛 Issues: [GitHub Issues](https://github.com/notchavanaditya/gemini-mcp-client/issues)
 - 📖 Documentation: [Wiki](https://github.com/notchavanaditya/gemini-mcp-client/wiki)
 
