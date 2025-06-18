@@ -1,0 +1,35 @@
+{
+  "name": "gemini-mcp-client",
+  "version": "1.0.0",
+  "description": "A comprehensive Gemini client with Devin-like interface and MCP extension support",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd client && npm install",
+    "start": "node server/index.js"
+  },
+  "keywords": ["gemini", "ai", "mcp", "devin", "excel", "file-management"],
+  "author": "OpenHands",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ws": "^8.14.2",
+    "multer": "^1.4.5-lts.1",
+    "axios": "^1.6.2",
+    "node-xlsx": "^0.23.0",
+    "exceljs": "^4.4.0",
+    "chokidar": "^3.5.3",
+    "uuid": "^9.0.1",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "concurrently": "^8.2.2"
+  }
+}

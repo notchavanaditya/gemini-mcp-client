@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  @apply h-screen bg-gray-900 text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Monaco Editor theme adjustments */
+.monaco-editor {
+  @apply rounded-lg;
+}
+
+/* Chat message animations */
+.message-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.message-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.message-exit {
+  opacity: 1;
+}
+
+.message-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full h-4 w-4 border-b-2 border-blue-500;
+}
+
+/* File tree styles */
+.file-tree {
+  @apply select-none;
+}
+
+.file-tree-item {
+  @apply flex items-center px-2 py-1 hover:bg-gray-700 cursor-pointer rounded;
+}
+
+.file-tree-item.selected {
+  @apply bg-blue-600;
+}
+
+.file-tree-item.directory {
+  @apply font-medium;
+}
+
+.file-tree-item.file {
+  @apply text-gray-300;
+}
+
+/* Extension card styles */
+.extension-card {
+  @apply bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-gray-600 transition-colors;
+}
+
+.extension-card.installed {
+  @apply border-green-600;
+}
+
+.extension-card.featured {
+  @apply border-yellow-500;
+}
+
+/* Code syntax highlighting adjustments */
+.hljs {
+  @apply bg-gray-800 !important;
+}
+
+/* Split pane styles */
+.Resizer {
+  @apply bg-gray-700 hover:bg-gray-600 transition-colors;
+  z-index: 1;
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+
+.Resizer.horizontal {
+  height: 11px;
+  margin: -5px 0;
+  border-top: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  cursor: row-resize;
+  width: 100%;
+}
+
+.Resizer.vertical {
+  width: 11px;
+  margin: 0 -5px;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-right: 5px solid rgba(255, 255, 255, 0);
+  cursor: col-resize;
+}
+
+.Resizer.disabled {
+  cursor: not-allowed;
+}
+
+.Resizer.disabled:hover {
+  border-color: transparent;
+}
+
+/* Toast customizations */
+.toast-success {
+  @apply bg-green-600 text-white;
+}
+
+.toast-error {
+  @apply bg-red-600 text-white;
+}
+
+.toast-loading {
+  @apply bg-blue-600 text-white;
+}
+
+/* Button variants */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-outline {
+  @apply border border-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+/* Input styles */
+.input-primary {
+  @apply bg-gray-800 border border-gray-600 text-white rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500 transition-colors;
+}
+
+.input-primary::placeholder {
+  @apply text-gray-400;
+}
+
+/* Card styles */
+.card {
+  @apply bg-gray-800 rounded-lg border border-gray-700;
+}
+
+.card-header {
+  @apply px-6 py-4 border-b border-gray-700;
+}
+
+.card-body {
+  @apply px-6 py-4;
+}
+
+.card-footer {
+  @apply px-6 py-4 border-t border-gray-700;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-800;
+}
+
+.badge-secondary {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* Dark theme badge adjustments */
+.dark .badge-primary {
+  @apply bg-blue-900 text-blue-200;
+}
+
+.dark .badge-success {
+  @apply bg-green-900 text-green-200;
+}
+
+.dark .badge-warning {
+  @apply bg-yellow-900 text-yellow-200;
+}
+
+.dark .badge-danger {
+  @apply bg-red-900 text-red-200;
+}
+
+.dark .badge-secondary {
+  @apply bg-gray-700 text-gray-200;
+}
